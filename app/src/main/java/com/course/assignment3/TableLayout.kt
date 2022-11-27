@@ -1,50 +1,48 @@
 package com.course.assignment3
 
-import android.app.ActionBar
 import android.os.Bundle
-import android.view.View.inflate
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.course.assignment3.databinding.ActivityMainBinding
-import com.course.assignment3.databinding.ActivityMainBinding.inflate
+import com.course.assignment3.databinding.ActivityTableLayoutBinding
+import com.course.assignment3.databinding.ActivityTableLayoutBinding.inflate
 
 
-class TableLayoutActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class TableLayout : AppCompatActivity() {
+    private lateinit var binding: ActivityTableLayoutBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_table_layout)
         binding = inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        binding.btnAddRow.setOnClickListener {
-            if (validateFields()) {
-                addNewRow(
-                    binding.edAndroidVersion.text.toString(),
-                    binding.edAndroidCodeName.text.toString()
+        binding.newRow.setOnClickListener {
+            if (validations()) {
+                insertRow(
+                    binding.androidVersion.text.toString(),
+                    binding.androidCodeName.text.toString()
                 )
             }
         }
 
     }
 
-    private fun validateFields(): Boolean {
+    private fun validations(): Boolean {
 
-        if (binding.edAndroidVersion.text.isEmpty()) {
-            Toast.makeText(this, "Enter android code version please", Toast.LENGTH_SHORT).show()
+        if (binding.androidVersion.text.isEmpty()) {
+            Toast.makeText(this, "Android code version is not provided", Toast.LENGTH_SHORT).show()
             return false
         }
 
-        if (binding.edAndroidCodeName.text.isEmpty()) {
-            Toast.makeText(this, "Enter android code name please", Toast.LENGTH_SHORT).show()
+        if (binding.androidCodeName.text.isEmpty()) {
+            Toast.makeText(this, "Android code name is not provided", Toast.LENGTH_SHORT).show()
             return false
         }
 
         return true
     }
 
-    private fun addNewRow(version: String, codeName: String) {
+    private fun insertRow(version: String, codeName: String) {
 
         // Create a new table row.
         val tableRow = TableRow(applicationContext)
@@ -69,13 +67,13 @@ class TableLayoutActivity : AppCompatActivity() {
         tvVersion.layoutParams = lp
         tvCode.layoutParams = lp
 
-       //set values
+        //set values
         tvVersion.text = version
         tvCode.text = codeName
 
 
         // Finally add the created row row into layout
-        binding.tblAndroidData.addView(tableRow)
+        binding.talbleLayoutData.addView(tableRow)
 
     }
 }

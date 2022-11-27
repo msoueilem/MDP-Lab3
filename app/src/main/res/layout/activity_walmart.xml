@@ -7,7 +7,7 @@
     android:layout_marginLeft="28dp"
     android:layout_marginRight="28dp"
     android:orientation="vertical"
-    tools:context=".walmart.LoginActivity">
+    >
 
     <ImageView
         android:layout_width="250dp"
@@ -43,7 +43,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:padding="12dp" />
+            android:padding="12dp"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Space
@@ -67,19 +68,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:padding="12dp" />
+            android:padding="12dp"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/tvForgetPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:autoLink="all"
         android:clickable="true"
-        android:layout_marginTop="2dp"
+        android:focusable="true"
         android:gravity="right"
-        android:text="Forgot password?"
-        android:focusable="true" />
+        android:minHeight="48dp"
+        android:text="Forgot password?" />
 
     <Space
         android:layout_width="match_parent"

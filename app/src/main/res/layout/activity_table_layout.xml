@@ -4,51 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TableLayoutActivity">
+    android:padding="5dp"
+    tools:context=".TableLayout">
 
 
     <EditText
-        android:id="@+id/edAndroidVersion"
-        android:layout_width="250dp"
+        android:id="@+id/androidVersion"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="32dp"
         android:hint="Enter Android Version"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:minHeight="48dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="5dp" />
 
     <EditText
-        android:id="@+id/edAndroidCodeName"
-        android:layout_width="250dp"
+        android:id="@+id/androidCodeName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:hint="Enter Android code name"
-        app:layout_constraintBottom_toTopOf="@+id/tblAndroidData"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Enter Android Code Name"
+        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edAndroidVersion" />
+        app:layout_constraintTop_toBottomOf="@id/androidVersion" />
 
     <TableLayout
-            android:id="@+id/tblAndroidData"
+        android:id="@+id/talbleLayoutData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stretchColumns="*"
-        app:layout_constraintTop_toBottomOf="@id/edAndroidCodeName">
+        app:layout_constraintTop_toBottomOf="@id/androidCodeName">
 
         <TableRow android:layout_width="match_parent">
 
             <Button
-                android:id="@+id/btnAddRow"
+                android:id="@+id/newRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_span="2"
-                android:text="Add" />
+                android:text="Add"
+                android:textColor="@color/white" />
 
         </TableRow>
 
@@ -58,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:background="@android:color/darker_gray"
+                android:background="#D4346A"
                 android:padding="5dp"
                 android:text="Version"
                 android:textAlignment="center"
@@ -69,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:background="@android:color/darker_gray"
+                android:background="#D4346A"
                 android:padding="5dp"
                 android:text="Code Name"
                 android:textAlignment="center"

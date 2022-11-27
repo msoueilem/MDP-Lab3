@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvEmail" type="id" />
+    <item name="tlEmail" type="id" />
+    <item name="tvPassword" type="id" />
+    <item name="tlPassword" type="id" />
+    <item name="tvForgetPassword" type="id" />
+    <item name="btnSignIn" type="id" />
+    <item name="btnCreate" type="id" />
+</resources>
